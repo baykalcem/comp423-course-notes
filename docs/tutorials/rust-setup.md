@@ -27,7 +27,7 @@ Ensure you have satisfied the following before continuing:<br>
     ```
     4. Let's create a README file to explain our new repository:
     ```
-    echo "# COMP423 Rust Tutorial > README.md
+    echo "# COMP423 Rust Tutorial" > README.md
     git add README.md
     git commit -m "Initial commit with README"
     ```
