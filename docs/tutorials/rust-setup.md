@@ -80,4 +80,6 @@ Ensure you have satisfied the following before continuing:<br>
     println!("Hello 426");
     }
     ```
-    5. In your terminal, write ```cargo run```.
+    4. In your terminal, write ```cargo build```. This command is equivalent to using ```gcc``` to compile a program into an executable file. This command compiles the code then places it into the ```target/debug``` directory. Then, enter ```./target/debug/hello_423```. This runs the file and is equivalent to writing ```./``` for a file compiled with ```gcc```.
+    5. In your terminal, write ```cargo run```. You will see the output immediately. This is because this command compiles and automatically executes the compiled program unlike ```build```.
+    6. Done!
