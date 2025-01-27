@@ -91,4 +91,4 @@ Ensure you have satisfied the following before continuing:<br>
     5. In your terminal, write ```cargo run```. You will see the output immediately. This is because this command compiles and automatically executes the compiled program unlike ```build```.
     !!! note "Build vs Run"
         When you use `cargo build`, Cargo compiles your Rust code and produces an executable or library, but it does not run the resulting binary. This means Cargo simply downloads any missing dependencies, compiles the project, and places the build artifacts in a designated target directory. On the other hand, `cargo run` not only builds your code—downloading and compiling dependencies as needed—but also executes the resulting binary immediately afterward. It’s a convenient way to streamline development, letting you compile and run your program in a single step rather than manually running the built binary each time.
-    6. Done!
+ Done!
