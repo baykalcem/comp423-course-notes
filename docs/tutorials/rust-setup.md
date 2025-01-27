@@ -14,19 +14,56 @@ Ensure you have satisfied the following before continuing:<br>
 5. Fundamentals of using the command-line.
 
 ## 1. Repository Setup
-1. Open either terminal or command-prompt on Mac and Windows respectively <br>
-2. Use the command line to create a new directory and go to it by using the following commands: <br>
+1. Local Repository Setup:
+    1. Open either terminal or command-prompt on Mac and Windows respectively. <br>
+    2. Use the command line to create a new directory and go to it by using the following commands: <br>
+    ```
+    mkdir comp423-rust-tutorial
+    cd comp423-rust-tutorial
+    ```
+    3. Use Git to initialize a new Git repository:
+    ```
+    git init
+    ```
+    4. Let's create a README file to explain our new repository:
+    ```
+    echo "# COMP423 Rust Tutorial > README.md
+    git add README.md
+    git commit -m "Initial commit with README"
+    ```
+2. Remote Repository Setup:
+    1. Sign into your GitHub account
+    2. Go to <a href="https://github.com/new">new repository</a> and fill in the following: <br>
+        - Repository Name: comp423-rust-tutorial
+        - Description: "Hello World in Rust"
+        - Visibility: Public <br>
+        - Do not initialize a README, .gitignore, or license.
+    3. Hit "Create Repository"
+3. Link Local And Remote Repositories:
+    1. Back in the command line add your GitHub repository as a remote where ```<yourusername> ``` is your GitHub username using: 
+    ```git remote add origin https://github.com/<your-username>/comp423-rust-tutorial.git```
+    2. Using ```git branch``` check your default branch name. If it is not ```main``` use ```git branch -M main```.
+    3. Push your local changes to the remote: 
+    ```
+    git push --set-upstream origin main
+    ```
+    4. If you refresh your repository in your browser you should see your changes. You can use ```git log``` to see the commit ID's and messages of your commits.
+## 2. Development Container Setup
+Let's create a Development Container Configuration
+1. Back in Visual Studio Code, open the newly created ```comp423-rust-tutorial``` directory using File > Open Folder. <br>
+2. Navigate to Extensions and install the "Dev Containers" extension. <br>
+3. Create a ```.devcontainer``` directory and add a file named ```devcontainer.json``` within. <br>
+4. Add the following ti this file: <br>
 ```
-mkdir comp423-rust-tutorial
-cd comp423-rust-tutorial
-```
-3. Use Git to initialize a new Git repository:
-```
-git init
-```
-4. Let's create a README file to explain our new repository:
-```
-echo "# COMP423 Rust Tutorial > README.md
-git add README.md
-git commit -m "Initial commit with README"
+{
+"name": "COMP423 Rust Tutorial",
+"image": "rust:latest",
+"customizations": {
+    "vscode": {
+    "settings": {},
+    "extensions": ["rust-lang.rust-analyzer"]
+    }
+},
+"postCreateCommand": "cargo install --path ."
+}
 ```
