@@ -1,7 +1,7 @@
 # Setting up a dev container for Rust
 
 * Primary author: [Cem Baykal](https://github.com/baykalcem)
-* Reviewer: [hugh toomey](https://hughtoomey)
+* Reviewer: [Hugh Toomey](https://hughtoomey)
 
 Hello! In this tutorial you will learn how to create a "Hello World" project in Rust.
 
@@ -69,6 +69,13 @@ Ensure you have satisfied the following before continuing:<br>
     "postCreateCommand": "",
     }
     ```
+    !!!
+    * name: The label that appears in your VS Code Dev Container environment.
+    * image: Points directly to an existing Docker image—in this case, the official Rust image on Docker Hub.
+    * settings: Custom VS Code settings inside the container.
+    * extensions: Lists extensions that will be installed automatically in the container
+    * postCreateCommand: Runs after the container is created.
+
 2. Press ```Ctrl+Shift+P on Windows or Cmd+Shift+P on Mac``` then type and select "Dev Containers: Reopen in Container". Then press enter to reopen your project in a development container.
 4. Rust!
     1. Once your development container is open, use the built-in terminal and run ```rustc --version```. You should see ```rustc 1.84.0```.
@@ -82,4 +89,6 @@ Ensure you have satisfied the following before continuing:<br>
     ```
     4. In your terminal, write ```cargo build```. This command is equivalent to using ```gcc``` to compile a program into an executable file. This command compiles the code then places it into the ```target/debug``` directory. Then, enter ```./target/debug/hello_423```. This runs the file and is equivalent to writing ```./``` for a file compiled with ```gcc```.
     5. In your terminal, write ```cargo run```. You will see the output immediately. This is because this command compiles and automatically executes the compiled program unlike ```build```.
+    !!! not "Build vs Run"
+    When you use `cargo build`, Cargo compiles your Rust code and produces an executable or library, but it does not run the resulting binary. This means Cargo simply downloads any missing dependencies, compiles the project, and places the build artifacts in a designated target directory. On the other hand, `cargo run` not only builds your code—downloading and compiling dependencies as needed—but also executes the resulting binary immediately afterward. It’s a convenient way to streamline development, letting you compile and run your program in a single step rather than manually running the built binary each time.
     6. Done!
