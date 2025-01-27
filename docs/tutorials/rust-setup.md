@@ -49,24 +49,35 @@ Ensure you have satisfied the following before continuing:<br>
     ```
     4. If you refresh your repository in your browser you should see your changes. You can use ```git log``` to see the commit ID's and messages of your commits.
 ## 2. Development Container Setup
-Let's create a Development Container Configuration
-1. Back in Visual Studio Code, open the newly created ```comp423-rust-tutorial``` directory using File > Open Folder. <br>
-2. Navigate to Extensions and install the "Dev Containers" extension. <br>
-3. Create a ```.devcontainer``` directory and add a file named ```devcontainer.json``` within. <br>
-4. Add the following to this file: <br>
-```
-{
-"name": "COMP423 Rust Tutorial",
-"image": "rust:latest",
-"customizations": {
-    "vscode": {
-    "settings": {},
-    "extensions": ["rust-lang.rust-analyzer"]
+1. Let's create a Development Container Configuration <br>
+    1. Back in Visual Studio Code, open the newly created ```comp423-rust-tutorial``` directory using File > Open Folder. <br>
+    2. Navigate to Extensions and install the "Dev Containers" extension. <br>
+    3. Create a ```.devcontainer``` directory and add a file named ```devcontainer.json``` within. <br>
+    4. Add the following to this file: <br>
+    ```
+    {
+    "name": "COMP423 Rust Tutorial",
+    "image": "rust:latest",
+    "customizations": {
+        "vscode": {
+            "settings": {},
+            "extensions": [
+                "rust-lang.rust-analyzer"
+            ]
+        }
+    },
+    "postCreateCommand": "",
     }
-},
-"postCreateCommand": "cargo install --path ."
-}
-```
-5. Press ```Ctrl+Shift+P on Windows or Cmd+Shift+P on Mac``` then type and select "Dev Containers: Reopen in Container". Then press enter to reopen your project in a development container.
-3. Rust!
-    1. 
+    ```
+2. Press ```Ctrl+Shift+P on Windows or Cmd+Shift+P on Mac``` then type and select "Dev Containers: Reopen in Container". Then press enter to reopen your project in a development container.
+4. Rust!
+    1. Once your development container is open, use the built-in terminal and run ```rustc --version```. You should see ```rustc 1.84.0```.
+    2. In the VS Code terminal, write ```cargo new hello_423```.
+    3. This will create a new directory. Navigate to this folder in your terminal using ```cd hello_423```.
+    4. Go to the ```hello_423/src/main.rs``` file. Replace this file with:
+    ```
+    fn main() {
+    println!("Hello 426");
+    }
+    ```
+    5. In your terminal, write ```cargo run```.
