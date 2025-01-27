@@ -49,7 +49,21 @@ Ensure you have satisfied the following before continuing:<br>
     ```
     4. If you refresh your repository in your browser you should see your changes. You can use ```git log``` to see the commit ID's and messages of your commits.
 ## 2. Development Container Setup
-1. Back in Visual Studio Code, open the newly created ```comp423-rust-tutorial``` directory using File > Open Folder.
-2. Navigate to Extensions and install the "Dev Containers" extension.
-3. Create a ```.devcontainer``` directory and add a file named ```devcontainer.json``` within.
-4. 
+Let's create a Development Container Configuration
+1. Back in Visual Studio Code, open the newly created ```comp423-rust-tutorial``` directory using File > Open Folder. <br>
+2. Navigate to Extensions and install the "Dev Containers" extension. <br>
+3. Create a ```.devcontainer``` directory and add a file named ```devcontainer.json``` within. <br>
+4. Add the following ti this file: <br>
+```
+{
+"name": "COMP423 Rust Tutorial",
+"image": "rust:latest",
+"customizations": {
+    "vscode": {
+    "settings": {},
+    "extensions": ["rust-lang.rust-analyzer"]
+    }
+},
+"postCreateCommand": "cargo install --path ."
+}
+```
