@@ -53,7 +53,7 @@ Let's create a Development Container Configuration
 1. Back in Visual Studio Code, open the newly created ```comp423-rust-tutorial``` directory using File > Open Folder. <br>
 2. Navigate to Extensions and install the "Dev Containers" extension. <br>
 3. Create a ```.devcontainer``` directory and add a file named ```devcontainer.json``` within. <br>
-4. Add the following ti this file: <br>
+4. Add the following to this file: <br>
 ```
 {
 "name": "COMP423 Rust Tutorial",
@@ -67,3 +67,6 @@ Let's create a Development Container Configuration
 "postCreateCommand": "cargo install --path ."
 }
 ```
+5. Press ```Ctrl+Shift+P on Windows or Cmd+Shift+P on Mac``` then type and select "Dev Containers: Reopen in Container". Then press enter to reopen your project in a development container.
+3. Rust!
+    1. 
